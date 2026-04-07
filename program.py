@@ -11,13 +11,14 @@ run_date = datetime.datetime.now().strftime("%Y-%m-%d")
 app_dir = os.path.dirname(os.path.abspath(__file__))
 config_dir = os.path.join(app_dir,"config/config.json")
 
-def main(kwargs):
+def main():
     # get inputs of starting # and hand
     # input_starting_domino = input("Please provide the number on the starting double domino:  ")
     # input_dominos = input("Please provide a comma seperated list of the dominos in your hand in the following format - top #/bottom # i.e. 5/2,6/7,8/4:  ")
+    
+    # test inputs
     input_starting_domino = "3"
     input_dominos = "3/4,4/6,3/7,6/12,12/11,11/8,5/10,6/5,8/1,8/0,0/2,2/9"
-    # input_dominos = "3/4,4/6,6/5,4/7"
     
     logger.info("starting domino: " + input_starting_domino)
     logger.info("dominos in hand: " + input_dominos)
@@ -27,7 +28,6 @@ def main(kwargs):
     list_dominos = input_dominos.split(",")
 
     dom_op = domino_optimizer()
-    # breakpoint()
     all_trains = dom_op.get_paths(logger, starting_domino, list_dominos)
     all_scores = [x["score"] for x in all_trains]
     all_scores.sort(reverse=True)
@@ -60,10 +60,7 @@ if __name__ == "__main__":
     print("---- APP START ----")
     logger.info("---- APP START ----")
 
-    #load config
-    with open(config_dir) as config_file:
-        config = json.load(config_file)
+    main()
 
-    _kwargs = config
-
-    main(_kwargs)
+    print("---- APP END ----")
+    logger.info("---- APP END ----")

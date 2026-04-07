@@ -25,7 +25,6 @@ class domino_optimizer:
         # default to no match
         match_found = False
         
-        #breakpoint()
         for domino in list_dominos:
             dom_nums = [int(x) for x in domino.split("/")]
             # breakpoint()
@@ -49,12 +48,10 @@ class domino_optimizer:
                 )
                 # remove the current match to backtrack               
                 curr_train.pop()
-                # breakpoint()
 
         if not match_found:
             logger.info("End of train")
             logger.info("final train: " + ",".join(curr_train))
-            # breakpoint()
             self.all_trains.append(
                 {
                     "id":uuid.uuid1(),
