@@ -12,7 +12,7 @@ During your first turn, you can play as many dominos as you like to build your i
 
 This is where the Domino Optimizer comes in: enter the starting domino and all the dominos in your hand, and it will find every possible train you could create organized by highest to lowest score. It returns the top 3 trains and their scores.
 
-This is done through a recursive algorithm that iterated over each domino and finds all possible branches on that path.
+This is done through a recursive algorithm that iterates over each domino and finds all possible branches on that path.
 
 ## Getting Started
 1. clone the repo
@@ -40,7 +40,7 @@ pipenv run python program.py
     - This would allow the starting double and player's hand to be entered by selecting pictures of dominos instead of manually typing in the values.
     - even better but much more complicated: take a photo of the dominos in your hand and the starting domino and have the app pull the values from those
 - [ ] make app more strategic by adding logic to deal with doubles
-    - Doubles are special in Mexican Train Dominos - they can be played at any time to start a new train. This makes it often times worth it to hold onto them rather than playing them on the first turn.
+    - Doubles are special in Mexican Train Dominos - they can be played at any time to start a new train. This often times makes it worth it to hold onto them rather than playing them on the first turn.
     - For example if there are 2 trains with near the same score but one uses a double and one doesn't, it's typically better to choose the train that DOESN'T use the double. This provides some strategic flexiblity if you find yourself in a situation where you can't play a domino on any train. You could play the double you saved rather than not earning any points that turn.
     - ideally I'd like to have 2 different results sets: one based on raw score and the other based on the highest possible score playing the least amount of doubles
     - could keep a count of doubles used and sort the output by doubles used then score
